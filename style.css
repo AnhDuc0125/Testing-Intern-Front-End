@@ -50,10 +50,16 @@ aside {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-inner {
   text-align: center;
   padding: 0 100px;
-  position: relative;
   overflow-y: auto;
+  flex: 1;
 }
 
 .logo {
@@ -96,14 +102,31 @@ footer {
   padding: 20px;
   padding-left: 100px;
   background-color: #fff;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  flex-shrink: 0;
 }
 
+/* Tablet */
+@media screen and (max-width: 1023px) {
+  .content {
+    display: block;
+  }
+
+  .content-item {
+    margin-bottom: 50px;
+  }
+}
+
+/* Mobile */
 @media screen and (max-width: 739px) {
-  body {
-    color: red;
+  .logo {
+    max-width: 250px;
+  }
+
+  .heading {
+    padding: 20px;
+  }
+
+  .main-inner {
+    padding: 0 25px;
   }
 }
